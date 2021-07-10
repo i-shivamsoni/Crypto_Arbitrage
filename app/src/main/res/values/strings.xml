@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Crypto_Arbitrage</string>
+    <string name="gbp_to_inr_rate">GBP To INR Rate: </string>
+    <string name="amount_in_currency_inr">Amount in Currency conversion Inr</string>
+    <string name="amount_in_crypto_inr">Amount in Crypto conversion Inr</string>
+    <string name="the_arbitrage_is">The arbitrage is:</string>
 </resources>

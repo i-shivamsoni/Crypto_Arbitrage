@@ -1,5 +1,6 @@
 package com.example.crypto_arbitrage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("btn", "onClick: "+ CP_obj.getBTC_GBP()+" "+CA_obj.getBuy_amount()+" "+CA_obj.getFees());
                 CA_obj.setBTC_Balance(CP_obj.getBTC_GBP(),CA_obj.getBuy_amount(),CA_obj.getFees());
                 Log.d("TAG", "onClick: "+CA_obj.getBTC_Balance());
+                Intent intent = new Intent(getApplicationContext(),MainActivityres.class);
+                intent.putExtra("GBP/INR",ER_obj.getGBP_INR());
+                intent.putExtra("amount",CA_obj.getBuy_amount());
+                intent.putExtra("btc/inr",CP_obj.getBTC_INR());
+                intent.putExtra("btc_amt",CA_obj.getBTC_Balance());
+                double val = ER_obj.getGBP_INR() * CP_obj.getBTC_GBP();
+                intent.putExtra("btc_pr_gpb",val);
+                startActivity(intent);
                 }
         });
     }

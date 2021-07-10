@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityres">
+
+    <TextView
+        android:id="@+id/textView_amtcinr"
+        android:layout_width="335dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/amount_in_crypto_inr"
+        app:layout_constraintBottom_toTopOf="@+id/TextView_arbi"
+        app:layout_constraintEnd_toEndOf="@+id/textView_amtInr"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_amtInr" />
+
+    <TextView
+        android:id="@+id/textView_gbpinr"
+        android:layout_width="231dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/gbp_to_inr_rate"
+        app:layout_constraintBottom_toTopOf="@+id/textView_amtInr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <TextView
+        android:id="@+id/textView_amtInr"
+        android:layout_width="339dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/amount_in_currency_inr"
+        app:layout_constraintBottom_toTopOf="@+id/textView_amtcinr"
+        app:layout_constraintEnd_toEndOf="@+id/textView_gbpinr"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="@+id/textView_gbpinr" />
+
+    <TextView
+        android:id="@+id/TextView_arbi"
+        android:layout_width="270dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="220dp"
+        android:text="@string/the_arbitrage_is"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_amtcinr"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/textView_amtcinr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
