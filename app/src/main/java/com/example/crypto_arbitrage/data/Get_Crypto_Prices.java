@@ -15,9 +15,9 @@ import org.json.JSONObject;
 public class Get_Crypto_Prices {
     JsonObjectRequest objectRequestWRX;
     JsonObjectRequest objectRequestCB;
-    private String urlc = "https://api.coinbase.com/v2/prices/spot?currency=GBP";
-    private String urlw = "https://api.wazirx.com/api/v2/tickers/btcinr";
     Crypto_Prices obj = new Crypto_Prices();
+    final private String urlc = "https://api.coinbase.com/v2/prices/spot?currency=GBP";
+    final private String urlw = "https://api.wazirx.com/api/v2/tickers/btcinr";
 
     public void Get_crypto_Prices(final GET_CP_AsyncResponse callBack) {
 
@@ -26,13 +26,11 @@ public class Get_Crypto_Prices {
             public void onResponse(JSONObject response) {
                 Log.d("TAG", "onResponse: " + response);
                 try {
-                    Log.d("TAG", "onResponse: " + response.getJSONObject("data").getDouble("amount"));
+                    obj.setBTC_GBP(response.getJSONObject("data").getDouble("amount"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-                secondServiceCall( urlw);
+                secondServiceCall(urlw);
             }
 
             private void secondServiceCall(String urlw) {
@@ -41,7 +39,7 @@ public class Get_Crypto_Prices {
                     public void onResponse(JSONObject response) {
                         Log.d("TAG", "onResponse: " + response);
                         try {
-                            Log.d("TAG", "onResponse: " + response.getJSONObject("ticker").getDouble("buy"));
+                            obj.setBTC_INR(response.getJSONObject("ticker").getDouble("buy"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

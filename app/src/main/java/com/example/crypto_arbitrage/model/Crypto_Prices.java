@@ -1,8 +1,21 @@
 package com.example.crypto_arbitrage.model;
 
-public class Crypto_Prices {
+import android.app.Application;
+
+public class Crypto_Prices extends Application {
+    private static Crypto_Prices mInstance;
     private double BTC_GBP;
     private double BTC_INR;
+    public static synchronized com.example.crypto_arbitrage.model.Crypto_Prices  getInstance() {
+
+        return mInstance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
 
     public Crypto_Prices() {
     }

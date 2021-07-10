@@ -1,8 +1,20 @@
 package com.example.crypto_arbitrage.model;
 
-public class Exchanges_Rates {
-    private double GBP_INR;
+import android.app.Application;
 
+public class Exchanges_Rates extends Application {
+    private static Exchanges_Rates mInstance;
+    private double GBP_INR;
+    public static synchronized com.example.crypto_arbitrage.model.Exchanges_Rates  getInstance() {
+
+        return mInstance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
     public Exchanges_Rates() {
     }
 
