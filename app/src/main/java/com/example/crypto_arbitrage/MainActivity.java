@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CP_obj = new Crypto_Prices();
-        CA_obj = new Crypto_Amounts();
-        ER_obj = new Exchanges_Rates();
-        amt = findViewById(R.id.editTextNumber);
-        fee = findViewById(R.id.editTextNumber2);
+        CP_obj = Crypto_Prices.getInstance();
+        CA_obj = Crypto_Amounts.getInstance();
+        ER_obj = Exchanges_Rates.getInstance();
+        fee = findViewById(R.id.editTextfee);
+        amt = findViewById(R.id.editTextNumberamt);
         cal = findViewById(R.id.button);
         fetchdata();
         cal.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 CA_obj.setFees(fees);
                 }
                 Log.d("btn", "onClick: "+ CP_obj.getBTC_GBP()+" "+CA_obj.getBuy_amount()+" "+CA_obj.getFees());
-
-            }
+                CA_obj.setBTC_Balance(CP_obj.getBTC_GBP(),CA_obj.getBuy_amount(),CA_obj.getFees());
+                Log.d("TAG", "onClick: "+CA_obj.getBTC_Balance());
+                }
         });
     }
 

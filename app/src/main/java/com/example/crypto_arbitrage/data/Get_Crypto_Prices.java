@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class Get_Crypto_Prices {
     JsonObjectRequest objectRequestWRX;
     JsonObjectRequest objectRequestCB;
-    Crypto_Prices obj = new Crypto_Prices();
+    Crypto_Prices obj = Crypto_Prices.getInstance();
     final private String urlc = "https://api.coinbase.com/v2/prices/spot?currency=GBP";
     final private String urlw = "https://api.wazirx.com/api/v2/tickers/btcinr";
 

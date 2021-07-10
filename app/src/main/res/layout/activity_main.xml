@@ -7,20 +7,20 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editTextNumberamt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
         android:ems="10"
         android:hint="Enter the amount"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+        app:layout_constraintEnd_toEndOf="@+id/editTextfee"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
+        app:layout_constraintStart_toStartOf="@+id/editTextfee"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextfee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberamt" />
 
     <Button
         android:id="@+id/button"
@@ -40,5 +40,5 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextfee" />
 </androidx.constraintlayout.widget.ConstraintLayout>

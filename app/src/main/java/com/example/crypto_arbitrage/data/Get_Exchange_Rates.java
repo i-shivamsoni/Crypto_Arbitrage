@@ -19,7 +19,7 @@ public class Get_Exchange_Rates {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("TAGc", "onResponse: "+response);
-                Exchanges_Rates obj = new Exchanges_Rates();
+                Exchanges_Rates obj = Exchanges_Rates.getInstance();
                 try {
                     obj.setGBP_INR(response.getDouble("GBP_INR"));
                 } catch (JSONException e) {
